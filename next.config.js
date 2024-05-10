@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   images: {
     dangerouslyAllowSVG: true,
     domains: [
@@ -8,6 +8,7 @@ const nextConfig = {
       'github-readme-stats-eight-theta.vercel.app',
       'github-readme-stats.vercel.app',
       'raw.githubusercontent.com',
+      'plus.unsplash.com',
     ],
   },
 }

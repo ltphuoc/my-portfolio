@@ -52,15 +52,24 @@ export async function getGistList(): Promise<any[]> {
 }
 
 function updateLanguages(data: any) {
+  let languages = data
+
   // Rename "Dart" to "Flutter" if present
-  // if (data['Dart']) {
-  //   data['Flutter'] = data['Dart']
-  //   delete data['Dart']
-  // }
+  if (languages['Dart']) {
+    languages['Flutter'] = languages['Dart']
+    delete languages['Dart']
+  }
+
+  if (languages['Flutter']) {
+    // delete all other languages
+    languages = {
+      Flutter: languages['Flutter'],
+    }
+  }
 
   // Remove specified languages
-  // const languagesToRemove = ['C++', 'CMake', 'Swift', 'C', 'Kotlin', 'Objective-C', 'Shell']
-  // languagesToRemove.forEach((language) => delete data[language])
+  const languagesToRemove = ['C++', 'CMake', 'Swift', 'C', 'Kotlin', 'Objective-C', 'Shell']
+  languagesToRemove.forEach((language) => delete languages[language])
 
-  return Object.keys(data)
+  return Object.keys(languages)
 }

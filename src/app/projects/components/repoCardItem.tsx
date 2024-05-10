@@ -15,7 +15,7 @@ function RepoCardItem({ repoItem }: Props) {
     >
       <CardContent sx={{ height: '100%' }}>
         <Stack spacing={3} sx={{ height: '100%' }}>
-          <Typography variant="body1" fontWeight="bold">
+          <Typography variant="body1" color="text.secondary" fontWeight="bold">
             {repoItem.name || repoItem.description || ''}
           </Typography>
           <Stack flex={1} direction={'row'} spacing={1} useFlexGap flexWrap={'wrap'}>

@@ -9,7 +9,7 @@ image:
 tags: [typescript, phỏng vấn reactjs]
 ---
 
-Learn Typescript
+Typescript cheat sheet
 
 <!-- truncate-->
 

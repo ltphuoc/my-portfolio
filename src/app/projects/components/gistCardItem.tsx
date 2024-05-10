@@ -19,13 +19,17 @@ function GistCardItem({ repoItem }: Props) {
       borderRadius={1}
     >
       <Stack spacing={1}>
-        <Typography variant="body1" fontWeight="bold">
+        <Typography variant="body1" color="text.secondary" fontWeight="bold">
           {a.filename}
         </Typography>
-        <Typography variant="body1">{repoItem.description}</Typography>
+        <Typography variant="body1" color="text.secondary">
+          {repoItem.description}
+        </Typography>
       </Stack>
 
-      <Typography variant="body2">{a.language}</Typography>
+      <Typography variant="body2" color="text.secondary">
+        {a.language}
+      </Typography>
     </Stack>
   )
 }

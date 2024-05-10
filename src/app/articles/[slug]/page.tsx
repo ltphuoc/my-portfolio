@@ -26,10 +26,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || []
-
   const posts = await getPostList()
   const post = posts.find((x) => x.slug === params.slug)
 
@@ -58,7 +54,7 @@ export default async function Page({ params }: Props) {
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
     .use(rehypePrism, { showLineNumbers: false })
-    .use(rehypeDocument, { title: 'Blog details page' })
+    .use(rehypeDocument, { title: 'Article details page' })
     .use(rehypeFormat)
     .use(rehypeStringify)
 

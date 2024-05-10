@@ -32,7 +32,7 @@ export default function Home() {
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto', aspectRatio: 1, borderRadius: '12px' }}
+              style={{ width: '100%', height: 'auto', aspectRatio: 1, borderRadius: 2 }}
               draggable={false}
             />
           </Box>
@@ -44,22 +44,24 @@ export default function Home() {
               </Typography>
 
               <Stack spacing={3}>
-                <Typography variant="body1">
+                <Typography variant="body1" color="text.secondary">
                   {
                     "Welcome to my personal website! I'm really excited to have you here. Let me introduce myself. I'm a software engineer who loves reading books and working on side projects. Learning is something I truly enjoy, and I like sharing what I learn with others. This website is where I share the interesting things I discover."
                   }
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1" color="text.secondary">
                   {
                     'I have a passion for technology and enjoy diving into the basics of computer science, such as data structures and algorithms, as well as system design. By understanding these fundamentals, I can build a strong foundation and explore new, advanced technologies more effectively.'
                   }
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1" color="text.secondary">
                   {
                     'Thank you for visiting, and I hope you find something valuable during your time here.'
                   }
                 </Typography>
-                <Typography variant="body1">{'Happy exploring!'}</Typography>
+                <Typography variant="body1" color="text.secondary">
+                  {'Happy exploring!'}
+                </Typography>
               </Stack>
             </Box>
 
@@ -91,7 +93,7 @@ export default function Home() {
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto', aspectRatio: 1, borderRadius: '12px' }}
+              style={{ width: '100%', height: 'auto', aspectRatio: 1, borderRadius: 2 }}
               draggable={false}
             />
           </Box>
@@ -111,7 +113,9 @@ export default function Home() {
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <GitHubIcon />
-                <Typography variant="body1">Follow on GitHub</Typography>
+                <Typography variant="body1" color="text.secondary">
+                  Follow on GitHub
+                </Typography>
               </Stack>
             </Link>
 
@@ -123,7 +127,9 @@ export default function Home() {
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <LinkedInIcon />
-                <Typography variant="body1">Follow on LinkedIn</Typography>
+                <Typography variant="body1" color="text.secondary">
+                  Follow on LinkedIn
+                </Typography>
               </Stack>
             </Link>
 
@@ -135,7 +141,9 @@ export default function Home() {
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <FacebookIcon />
-                <Typography variant="body1">Follow on Facebook</Typography>
+                <Typography variant="body1" color="text.secondary">
+                  Follow on Facebook
+                </Typography>
               </Stack>
             </Link>
           </Stack>
@@ -148,7 +156,9 @@ export default function Home() {
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <EmailIcon />
-                <Typography variant="body1">thanhphuoc.se@gmail.com</Typography>
+                <Typography variant="body1" color="text.secondary">
+                  thanhphuoc.se@gmail.com
+                </Typography>
               </Stack>
             </Link>
           </Box>
@@ -162,10 +172,10 @@ export default function Home() {
           </Typography>
 
           <Box>
-            <Typography variant="body1">
+            <Typography variant="body1" color="text.secondary">
               {"I'm a software engineer based in Ho Chi Minh, VietNam."}
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" color="text.secondary">
               I love to{' '}
               <Link component={NextLink} href={'/projects'}>
                 build things
@@ -173,7 +183,7 @@ export default function Home() {
               with JavaScript and love to learn new technologies.
             </Typography>
 
-            <Typography variant="body1" mt={2}>
+            <Typography variant="body1" color="text.secondary" mt={2}>
               Find out{' '}
               <Link component={NextLink} href={'/about'}>
                 more.

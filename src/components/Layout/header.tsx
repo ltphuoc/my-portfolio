@@ -1,31 +1,28 @@
 'use client'
 
+import useSettings from '@/hook/useSettings'
 import {
+  Alert,
   AppBar,
   Box,
   Button,
   Container,
   Drawer,
-  Link as MuiLink,
-  MenuItem,
-  Stack,
-  Toolbar,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
-  Divider,
   Snackbar,
-  Alert,
+  Stack,
+  Toolbar,
 } from '@mui/material'
 import clsx from 'clsx'
 import NextLink from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { KeyboardCommandKeyButton } from '../Button/KeyboardCommandKeyButton'
 import { MenuButton } from '../Button/MenuButton'
 import { SwitchThemeButton } from '../Button/SwitchThemeButton'
+import { useTheme } from 'next-themes'
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -37,8 +34,10 @@ const navItems = [
 type Props = {}
 
 export default function Header({}: Props) {
+  const { themeMode, toggleTheme } = useSettings()
+  const lightMode = themeMode === 'light'
+
   const pathName = usePathname()
-  const router = useRouter()
 
   const [open, setOpen] = useState(false)
   const [openSnackbar, setOpenSnackbar] = useState(false)
@@ -94,17 +93,8 @@ export default function Header({}: Props) {
               </Box>
             </Drawer>
 
-            <Stack
-              direction={'row'}
-              spacing={1}
-              onClick={() => {
-                setOpenSnackbar(true)
-              }}
-            >
-              {/* <Box display={{ xs: 'none', md: 'block' }}>
-                <KeyboardCommandKeyButton onClick={() => {}} />
-              </Box> */}
-              <SwitchThemeButton />
+            <Stack direction={'row'} spacing={1}>
+              <SwitchThemeButton lightMode={lightMode} onClick={toggleTheme} />
             </Stack>
 
             <Snackbar

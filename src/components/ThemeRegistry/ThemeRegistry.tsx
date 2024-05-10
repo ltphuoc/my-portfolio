@@ -1,9 +1,9 @@
 'use client'
+import useSettings from '@/hook/useSettings'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeOptions, ThemeProvider, createTheme } from '@mui/material/styles'
 import { Roboto } from 'next/font/google'
 import * as React from 'react'
-import NextAppDirEmotionCacheProvider from './EmotionCache'
 import palette from './palette'
 
 const roboto = Roboto({
@@ -13,10 +13,12 @@ const roboto = Roboto({
 })
 
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
-  const isLight = true
+  const { themeMode } = useSettings()
+
+  const lightMode = themeMode === 'light'
 
   const themeOptions: ThemeOptions = {
-    palette: isLight ? palette.light : palette.dark,
+    palette: lightMode ? palette.light : palette.dark,
     typography: {
       fontFamily: [roboto.style.fontFamily].join(','),
       fontWeightRegular: 400,
@@ -36,17 +38,9 @@ export default function ThemeRegistry({ children }: { children: React.ReactNode 
         },
       },
     },
-    MuiDialogContent: {
-      styleOverrides: {
-        root: {
-          // background: '#25262b',
-        },
-      },
-    },
     MuiCard: {
       styleOverrides: {
         root: {
-          // background: '#25262b',
           position: 'relative',
           borderRadius: Number(theme.shape.borderRadius) * 2,
           zIndex: 0,
@@ -106,34 +100,8 @@ export default function ThemeRegistry({ children }: { children: React.ReactNode 
         },
       },
     },
-    MuiListItemButton: {
-      styleOverrides: {
-        root: {
-          // color: 'white',
-          // textTransform: 'none',
-          // '&:hover': {
-          //   background: theme.palette.secondary.main,
-          // },
-          // '&.active': {
-          //   color: theme.palette.primary.main,
-          //   background: '#25262b',
-          // },
-        },
-      },
-    },
-    MuiListItemText: {
-      styleOverrides: {
-        // root: {
-        //   color: 'white',
-        //   '&.active': {
-        //     color: theme.palette.primary.main,
-        //   },
-        // },
-      },
-    },
     MuiLink: {
       defaultProps: {
-        // underline: 'none',
         underline: 'hover',
         fontWeight: 700,
       },
@@ -148,12 +116,10 @@ export default function ThemeRegistry({ children }: { children: React.ReactNode 
   }
 
   return (
-    <NextAppDirEmotionCacheProvider options={{ key: 'mui' }}>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
-    </NextAppDirEmotionCacheProvider>
+    <ThemeProvider theme={theme}>
+      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
   )
 }

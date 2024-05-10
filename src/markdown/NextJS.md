@@ -9,7 +9,7 @@ image:
 tags: [NextJS, tsx]
 ---
 
-Learn NextJS Page Routes
+My Learning NextJS Page Routes
 
 <!-- truncate-->
 
@@ -130,4 +130,3 @@ export async function getServerSideProps(context) {
 - next 0-10s (swr) -> return from cache (stale) -> call getServerSideProps and cache in CDN
 - after 20s (s-maxage + swr) -> start new circle
 
-## ISR
