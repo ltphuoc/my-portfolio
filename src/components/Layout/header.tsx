@@ -22,7 +22,6 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { MenuButton } from '../Button/MenuButton'
 import { SwitchThemeButton } from '../Button/SwitchThemeButton'
-import { useTheme } from 'next-themes'
 
 const navItems = [
   { label: 'Home', path: '/' },
