@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="KBwhC7yBDpPvfCcGnprnWcSo8G4YszTa6322sZ5WFKA" />
       <body className={inter.className}>
         <SettingsContextProvider>
           <AppRouterCacheProvider>
