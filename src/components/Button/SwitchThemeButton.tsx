@@ -13,7 +13,7 @@ export const SwitchThemeButton = ({ lightMode, onClick }: SwitchThemeButtonProps
   return (
     <Button
       variant="contained"
-      sx={{ py: 1 }}
+      sx={{ py: 1, color: lightMode ? 'primary.main' : undefined }}
       className="active"
       aria-label="change theme"
       onClick={onClick}

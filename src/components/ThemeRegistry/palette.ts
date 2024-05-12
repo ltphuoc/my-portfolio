@@ -25,6 +25,7 @@ interface ChartPaletteOptions {
 declare module '@mui/material/styles/createPalette' {
   interface TypeBackground {
     neutral: string
+    appBar: string
   }
   interface SimplePaletteColorOptions {
     lighter: string
@@ -167,14 +168,24 @@ const palette = {
     ...COMMON,
     mode: 'light',
     text: { primary: '#000', secondary: GREY[800], disabled: GREY[500] },
-    background: { paper: '#fff', default: '#fff', neutral: GREY[200] },
+    background: {
+      paper: '#fff',
+      default: '#fff',
+      appBar: 'rgba(255, 255, 255, 0.8)',
+      neutral: GREY[200],
+    },
     action: { active: GREY[600], ...COMMON.action },
   },
   dark: {
     ...COMMON,
     mode: 'dark',
     text: { primary: '#fff', secondary: GREY[500], disabled: GREY[600] },
-    background: { paper: '#25262b', default: '#1a1b1e', neutral: GREY[500_16] },
+    background: {
+      paper: '#25262b',
+      default: '#1a1b1e',
+      appBar: 'rgba(26, 27, 30, 0.8)',
+      neutral: GREY[500_16],
+    },
     action: { ...COMMON.action },
   },
 } as const

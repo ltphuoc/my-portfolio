@@ -20,8 +20,8 @@ export default function TimelineEducation() {
     >
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot sx={{ backgroundColor: 'red' }} />
-          <TimelineConnector sx={{ backgroundColor: 'red' }} />
+          <TimelineDot sx={{ backgroundColor: 'primary.main' }} />
+          <TimelineConnector sx={{ backgroundColor: 'primary.main' }} />
         </TimelineSeparator>
         <TimelineContent>
           <Typography variant="body1" fontWeight={500}>

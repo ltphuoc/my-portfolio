@@ -68,7 +68,8 @@ export default function ThemeRegistry({ children }: { children: React.ReactNode 
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: theme.palette.background.appBar,
+          backdropFilter: 'blur(8px)',
         },
       },
     },
@@ -80,9 +81,9 @@ export default function ThemeRegistry({ children }: { children: React.ReactNode 
           textTransform: 'none',
           color: theme.palette.text.primary,
         },
+
         contained: {
           backgroundColor: theme.palette.action.hover,
-          color: theme.palette.primary.main,
           '&:hover': {
             color: theme.palette.primary.main,
             backgroundColor: theme.palette.action.hover,
@@ -110,6 +111,17 @@ export default function ThemeRegistry({ children }: { children: React.ReactNode 
           '&:hover': {
             color: theme.palette.primary.main,
           },
+          '&.active': {
+            color: theme.palette.primary.main,
+            backgroundColor: theme.palette.action.selected,
+          },
+        },
+      },
+    },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius,
         },
       },
     },

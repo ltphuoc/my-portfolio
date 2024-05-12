@@ -23,7 +23,7 @@ export default async function Article() {
             alignItems={{ md: 'baseline' }}
             maxWidth={{ md: '80%', xs: '100%' }}
           >
-            <Box sx={{ px: 2, py: { md: 3, xs: 0 } }}>
+            <Box sx={{ px: 3, py: { md: 3, xs: 0 } }}>
               <Typography variant="body2" color="grey">
                 {new Date().toLocaleDateString('en-US', {
                   month: 'long',
@@ -38,10 +38,11 @@ export default async function Article() {
               underline="none"
               color="inherit"
               sx={{
+                borderRadius: 2,
                 flex: 1,
                 textDecoration: 'none',
-                px: 2,
-                py: 3,
+                p: 3,
+
                 '&:hover': {
                   color: 'text.primary',
                   bgcolor: 'action.selected',

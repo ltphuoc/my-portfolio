@@ -25,14 +25,27 @@ export default function Home() {
     <>
       <Grid container rowSpacing={12} columnSpacing={4}>
         <Grid item md={7}>
-          <Box sx={{ display: { xs: 'block', md: 'none' }, mb: 4, maxWidth: 300 }}>
+          <Box
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              mb: 4,
+              maxWidth: 300,
+              borderRadius: 2,
+              overflow: 'hidden',
+            }}
+          >
             <Image
+              priority
               alt={'My ava'}
               src={'/images/ava.jpg'}
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto', aspectRatio: 1, borderRadius: 2 }}
+              style={{
+                width: '100%',
+                height: 'auto',
+                aspectRatio: 1,
+              }}
               draggable={false}
             />
           </Box>
@@ -40,7 +53,7 @@ export default function Home() {
           <Stack spacing={8}>
             <Box>
               <Typography variant="h3" component="h1" fontWeight={700} mb={4}>
-                {"I'm Phuoc Le, a software engineer living in Ho Chi Minh City, Vietnam"}
+                {"I'm Segen Le, a software engineer living in Ho Chi Minh City, Vietnam"}
               </Typography>
 
               <Stack spacing={3}>
@@ -66,7 +79,7 @@ export default function Home() {
             </Box>
 
             <Box>
-              <Typography variant="h5" fontWeight={700} mb={4}>
+              <Typography variant="h5" component="h2" fontWeight={700} mb={4}>
                 Tech Stack
               </Typography>
 
@@ -86,23 +99,25 @@ export default function Home() {
           </Stack>
         </Grid>
         <Grid item md={5}>
-          <Box sx={{ transform: 'rotate(2deg)', display: { xs: 'none', md: 'block' } }}>
+          <Box
+            sx={{
+              transform: 'rotate(2deg)',
+              display: { xs: 'none', md: 'block' },
+              borderRadius: 2,
+              overflow: 'hidden',
+            }}
+          >
             <Image
+              priority
               alt={'My ava'}
               src={'/images/ava.jpg'}
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: '100%', height: 'auto', aspectRatio: 1, borderRadius: 2 }}
+              style={{ width: '100%', height: 'auto', aspectRatio: 1 }}
               draggable={false}
             />
           </Box>
-
-          {/* <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-            <Typography variant="h5" fontWeight={700} mb={4}>
-              Contact
-            </Typography>
-          </Box> */}
 
           <Stack spacing={3} mt={{ xs: 0, md: 6 }}>
             <Link
@@ -110,10 +125,17 @@ export default function Home() {
               color="inherit"
               underline="none"
               target="_blank"
+              sx={{
+                '&:hover': {
+                  '.typographyHover': {
+                    color: 'primary.main',
+                  },
+                },
+              }}
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <GitHubIcon />
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" color="text.secondary" className="typographyHover">
                   Follow on GitHub
                 </Typography>
               </Stack>
@@ -124,10 +146,17 @@ export default function Home() {
               color="inherit"
               underline="none"
               target="_blank"
+              sx={{
+                '&:hover': {
+                  '.typographyHover': {
+                    color: 'primary.main',
+                  },
+                },
+              }}
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <LinkedInIcon />
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" color="text.secondary" className="typographyHover">
                   Follow on LinkedIn
                 </Typography>
               </Stack>
@@ -138,10 +167,17 @@ export default function Home() {
               color="inherit"
               underline="none"
               target="_blank"
+              sx={{
+                '&:hover': {
+                  '.typographyHover': {
+                    color: 'primary.main',
+                  },
+                },
+              }}
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <FacebookIcon />
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" color="text.secondary" className="typographyHover">
                   Follow on Facebook
                 </Typography>
               </Stack>
@@ -153,10 +189,17 @@ export default function Home() {
               color="inherit"
               underline="none"
               target="_blank"
+              sx={{
+                '&:hover': {
+                  '.typographyHover': {
+                    color: 'primary.main',
+                  },
+                },
+              }}
             >
               <Stack direction={'row'} alignItems={'center'} spacing={2}>
                 <EmailIcon />
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" color="text.secondary" className="typographyHover">
                   thanhphuoc.se@gmail.com
                 </Typography>
               </Stack>
