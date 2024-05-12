@@ -1,3 +1,4 @@
+import Footer from '@/components/Layout/Footer'
 import Header from '@/components/Layout/header'
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
 import { SettingsContextProvider } from '@/context/SettingsContext'
@@ -6,12 +7,11 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../styles/prism.css'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: 'My Portfolio - Phuoc Le',
+  description: 'My Portfolio - Segen Le',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,16 +22,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SettingsContextProvider>
           <AppRouterCacheProvider>
             <ThemeRegistry>
-              <Header />
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  minHeight: '100vh',
+                }}
+              >
+                <Header />
 
-              {/* <Suspense fallback={<Loading />}> */}
-              <Box component="main">
-                <Toolbar disableGutters />
-                <Container sx={{ py: { md: 10, xs: 4 } }}>
-                  <Box px={1}>{children}</Box>
-                </Container>
+                <Box component="main" flex={1}>
+                  <Toolbar disableGutters />
+                  <Container sx={{ py: { md: 10, xs: 4 } }}>
+                    <Box px={1}>{children}</Box>
+                  </Container>
+                </Box>
+
+                <Footer />
               </Box>
-              {/* </Suspense> */}
             </ThemeRegistry>
           </AppRouterCacheProvider>
         </SettingsContextProvider>
