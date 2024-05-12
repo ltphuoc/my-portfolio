@@ -3,7 +3,6 @@ import { Box, Grid, Link, Stack, Typography } from '@mui/material'
 import RepoCardItem from './components/repoCardItem'
 
 export default async function Blog() {
-  // const gistList = await getGistList()
   const repoList = await getRepoList()
   const repoListCapstoneProject = await getRepoListCapstoneProject()
 
@@ -25,7 +24,7 @@ export default async function Blog() {
           Capstone Project Repos
         </Typography>
         <Grid container spacing={3}>
-          {repoListCapstoneProject.map((x) => (
+          {repoListCapstoneProject?.map((x) => (
             <Grid item key={x.id} lg={4} md={6} xs={12}>
               <RepoCardItem repoItem={x} />
             </Grid>
@@ -38,7 +37,7 @@ export default async function Blog() {
           My Personal Repos
         </Typography>
         <Grid container spacing={3}>
-          {repoList.map((x) => (
+          {repoList?.map((x) => (
             <Grid item key={x.id} lg={4} md={6} xs={12}>
               <RepoCardItem repoItem={x} />
             </Grid>

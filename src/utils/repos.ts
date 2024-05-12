@@ -7,12 +7,12 @@ export async function getRepoList(): Promise<any[]> {
 
   const repoList = await res.json()
 
-  repoList.forEach(async (repo: any) => {
+  for (const repo of repoList) {
     const languageRes = await fetch(repo.languages_url)
     const languageList = await languageRes.json()
 
     repo.language = updateLanguages(languageList)
-  })
+  }
 
   return repoList.sort((a: any, b: any) => {
     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
@@ -27,12 +27,12 @@ export async function getRepoListCapstoneProject(): Promise<any[]> {
   }
   const repoList = await res.json()
 
-  repoList.forEach(async (repo: any) => {
+  for (const repo of repoList) {
     const languageRes = await fetch(repo.languages_url)
     const languageList = await languageRes.json()
 
     repo.language = updateLanguages(languageList)
-  })
+  }
 
   return repoList.sort((a: any, b: any) => {
     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
@@ -52,7 +52,7 @@ export async function getGistList(): Promise<any[]> {
 }
 
 function updateLanguages(data: any) {
-  let languages = data
+  let languages = { ...data }
 
   // Rename "Dart" to "Flutter" if present
   if (languages['Dart']) {

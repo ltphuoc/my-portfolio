@@ -18,8 +18,6 @@ export default async function getPostList(): Promise<Post[]> {
       excerpt_separator: '<!-- truncate-->',
     })
 
-    console.log({ data })
-
     postList.push({
       id: fileName,
       slug: data.slug,
