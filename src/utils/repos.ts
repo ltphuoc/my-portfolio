@@ -1,5 +1,9 @@
 export async function getRepoList(): Promise<any[]> {
-  const res = await fetch('https://api.github.com/users/ltphuoc/repos')
+  const res = await fetch('https://api.github.com/users/ltphuoc/repos', {
+    next: {
+      revalidate: 3600 * 24,
+    },
+  })
 
   if (!res.ok) {
     return []

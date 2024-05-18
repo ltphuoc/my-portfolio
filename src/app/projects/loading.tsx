@@ -8,7 +8,7 @@ export default function Loading() {
         <Typography variant="h4" fontWeight={700}>
           Projects
         </Typography>
-        <Link target="_blank" href="https://github.com/ltphuoc">
+        <Link target="_blank" href="https://github.com/ltphuoc?tab=repositories">
           <Typography variant="h6" fontWeight={700}>
             Github repos
           </Typography>
